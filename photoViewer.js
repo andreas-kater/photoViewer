@@ -5,9 +5,9 @@ const readline = require('readline').createInterface({
     output: process.stdout
 })
 
-var moveFrom = "/Users/andreaskater/GoogleDrive/Candi/Candi's\ Wedding/Wedding\ photos/Candi\ Wedding\ Photos/PHOTOGRAPHER/ceremony"
+// var moveFrom = "/Users/andreaskater/GoogleDrive/Candi/Candi's\ Wedding/Wedding\ photos/Candi\ Wedding\ Photos/PHOTOGRAPHER/ceremony"
 // var moveFrom = "/Users/andreaskater/GoogleDrive/Candi/Candi's Wedding/Wedding photos/Candi Wedding Photos/PHOTOGRAPHER/cocktail"
-// var moveFrom = "/Users/andreaskater/GoogleDrive/Candi/Candi's Wedding/Wedding photos/Candi Wedding Photos/PHOTOGRAPHER/couplesession"
+var moveFrom = "/Users/andreaskater/GoogleDrive/Candi/Candi's Wedding/Wedding photos/Candi Wedding Photos/PHOTOGRAPHER/couplesession"
 // var moveFrom = "/Users/andreaskater/GoogleDrive/Candi/Candi's Wedding/Wedding photos/Candi Wedding Photos/PHOTOGRAPHER/fireworkparty"
 var moveTo = "/Users/andreaskater/Dev/photo-viewer/viewer/public"
 var saveTo = "/Users/andreaskater/Dev/photo-viewer/output"
@@ -33,6 +33,8 @@ async function cycleThroughPhotos() {
             if (answer === 's') {
                 let savePath = path.join(saveTo, file)
                 await fs.copyFileSync(fromPath, savePath)
+            } else if (answer === 'b') {
+                i = i - 2
             }
         }
     }
